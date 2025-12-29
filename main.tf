@@ -121,8 +121,8 @@ EOF
 }
 
 resource "aws_instance" "web" {
-  ami             = "ami-0f00d706c4a80fd93"
-  instance_type   = "t2.medium" 
+  ami             = "ami-0c398cb65a93047f2"
+  instance_type   = "t3.small" 
   key_name        = var.key_name
   iam_instance_profile = "${aws_iam_instance_profile.test_profile.name}"
   security_groups = [aws_security_group.jenkins_sg.name]
@@ -131,7 +131,7 @@ resource "aws_instance" "web" {
     Name = "Jenkins"
   }
 root_block_device {
-    volume_size = 30
+    volume_size = 20
     
   }
 }
